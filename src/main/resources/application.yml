@@ -1,0 +1,74 @@
+#eureka config
+spring: 
+  application:  
+    name: user-microservice
+
+#spring mail
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: simranbodra9619@gmail.com
+    properties: 
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+#elastic search config
+  data:
+    elasticsearch:
+      cluster-nodes: localhost:9300
+
+#MongoDB 
+    mongodb:  
+      database: mongologin
+      host: localhost
+      port: 27017
+#spring social login
+  social:
+    facebook:
+      appId: 230122781174447
+      appSecret: a229fe68e879fc4fc1d1f827cf2cb162
+      
+#rabbitmq configuration
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+jsa:
+  rabbitmq:
+    exchange: jsa.direct
+    routingkey: jsa.routingkey
+    queue: jsa.queue  
+
+
+
+#mail messages
+activation:
+  subject: Confirm registeration.
+  link: To activate your account, click the following link - http://localhost:8080/user/activateaccount?token=
+forgotpassword:
+  subject: Forgot Password Link
+  link: To reset your password,click the following link - http://localhost:8080/user/setpassword?token=
+  
+registerationlink: "To activate your account, click the following link : http://localhost:8080/user/activateaccount?token="
+
+
+
+
+#redistoken
+redis:
+  key: token
+
+
+
+#jwt token key
+key: mamta
+
+server:
+  port: 8003
+
+eureka:
+  client: 
+    service-url.default-zone: http://localhost:8761/eureka
